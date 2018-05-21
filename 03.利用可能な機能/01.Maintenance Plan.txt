@@ -3,6 +3,8 @@ SQL_USER=demouser SQL_PASS=$SQLPASS /bin/bash /mnt/share/Maintenance/backupdb.sh
 ls /var/opt/mssql/backup
 
 # dtexec で取得
+watch -n 1 "ps -ef | grep dtexec | grep -v grep"
+
 cd /mnt/share/Maintenance
 dtexec /F ./DatabaseBackup.dtsx  /Conf SSISConfig.dtsConfig /Repo EP
 ls /var/opt/mssql/backup

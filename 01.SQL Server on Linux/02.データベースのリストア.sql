@@ -3,6 +3,7 @@ GO
 
 -- バックアップファイルからバージョンを確認
 RESTORE HEADERONLY FROM  DISK = N'/mnt/share/backup/pubs.bak' 
+-- RESTORE FILELISTONLY FROM  DISK = N'/mnt/share/backup/pubs.bak' 
 GO
 
 /*
@@ -11,16 +12,7 @@ SQL Server 2008 : 661
 SQL Server 2008 R2 : 665
 */
 
---- バックアップファイルの内容を確認
-RESTORE FILELISTONLY FROM  DISK = N'/mnt/share/backup/pubs.bak' 
-GO
-/*
-SQL Server 2005 : 611
-SQL Server 2008 : 661
-SQL Server 2008 R2 : 665
-*/
-
--- SQL Server on Linux にリストア
+-- SQL Server on Linux に Windows の SQL Server の DB をリストア
 ALTER DATABASE [pubs] SET SINGLE_USER WITH ROLLBACK IMMEDIATE
 GO
 
@@ -33,7 +25,3 @@ GO
 
 ALTER DATABASE [pubs] SET MULTI_USER
 GO
-
-
-
-

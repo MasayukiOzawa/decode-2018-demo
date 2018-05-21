@@ -1,2 +1,5 @@
+# 起動しているコンテナの表示
 docker ps -a
+
+# collectd の設定の表示
 docker exec -it collectd less /etc/collectd/collectd.conf
