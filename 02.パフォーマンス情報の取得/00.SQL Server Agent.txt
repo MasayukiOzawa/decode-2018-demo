@@ -1,0 +1,16 @@
+SET NOCOUNT ON
+
+IF  OBJECT_ID('tempdb..perf') IS NULL
+BEGIN
+	SELECT GETDATE() AS perf_date, * INTO tempdb..perf
+	FROM sys.dm_os_performance_counters WHERE 1=0
+
+	CREATE CLUSTERED INDEX CIX_PERF ON tempdb..perf (perf_date, object_name) 
+	WITH(DATA_COMPRESSION=PAGE)
+	CREATE COLUMNSTORE INDEX NCCIX_PERF ON tempdb..perf
+	(perf_date, object_name, counter_name, instance_name, cntr_value, cntr_type)
+END
+
+INSERT INTO tempdb..perf SELECT GETDATE(), * 
+FROM sys.dm_os_performance_counters 
+WHERE object_name = 'SQLServer:Memory Manager'

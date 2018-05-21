@@ -1,0 +1,2 @@
+docker ps -a
+docker exec -it collectd less /etc/collectd/collectd.conf

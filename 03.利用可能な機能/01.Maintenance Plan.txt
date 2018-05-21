@@ -1,0 +1,11 @@
+﻿# Shell スクリプトで取得
+SQL_USER=demouser SQL_PASS=$SQLPASS /bin/bash /mnt/share/Maintenance/backupdb.sh FULL
+ls /var/opt/mssql/backup
+
+# dtexec で取得
+cd /mnt/share/Maintenance
+dtexec /F ./DatabaseBackup.dtsx  /Conf SSISConfig.dtsConfig /Repo EP
+ls /var/opt/mssql/backup
+
+
+

@@ -1,0 +1,2 @@
+wget -qO- https://get.docker.com/ | sudo sh
+git clone https://github.com/Microsoft/mssql-monitoring.git

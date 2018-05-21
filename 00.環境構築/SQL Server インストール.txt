@@ -1,0 +1,5 @@
+# Enterprise
+sudo MSSQL_AGENT_ENABLED='true' MSSQL_ENABLE_HADR='1' ACCEPT_EULA='Y' MSSQL_PID='Enterprise' MSSQL_SA_PASSWORD='b2b085bd-9a79-4aef-bfcf-d522eebc8a47' MSSQL_LCID=1041 MSSQL_COLLATION=Japanese_XJIS_140_CI_AS  /opt/mssql/bin/mssql-conf setup
+
+# Express
+sudo MSSQL_AGENT_ENABLED='true' MSSQL_ENABLE_HADR='1' ACCEPT_EULA='Y' MSSQL_PID='Express' MSSQL_SA_PASSWORD='b2b085bd-9a79-4aef-bfcf-d522eebc8a47' MSSQL_LCID=1041 MSSQL_COLLATION=Japanese_XJIS_140_CI_AS  /opt/mssql/bin/mssql-conf setup
